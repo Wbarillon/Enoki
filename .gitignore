@@ -117,4 +117,4 @@ GitHub.sublime-settings
 
 # Custom directories to ignore
 static
-db_postgresql
+db_postgresql/db/*

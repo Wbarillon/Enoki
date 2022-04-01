@@ -114,3 +114,7 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+# Custom directories to ignore
+static
+db_postgresql

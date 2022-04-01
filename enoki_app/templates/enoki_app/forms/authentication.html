@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main id="authentication-main">
+    {% if state == 'inscription' %}
+
+        <h1>Inscription</h1>
+        <form method="POST">{% csrf_token %}
+            {{ inscription_form.as_p }}
+            <button type="submit" name="action" value="inscription_confirmation">Inscription</button>
+        </form>
+
+    {% elif state == 'login' %}
+
+        <h1>Connexion</h1>
+        <form method="POST">{% csrf_token %}
+            {{ login_form.as_p }}
+            <button type="submit" name="action" value="login_confirmation">Login</button>
+        </form>
+
+    {% endif %}
+</main>
+{% endblock %}

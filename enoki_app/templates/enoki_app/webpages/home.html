@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main id="home-main">
+    {% if user.is_authenticated %}
+        <p>Hello {{ user }}</p>
+    {% else %}
+        <p>Hello Django</p>
+    {% endif %}
+    <form action="{% url 'authentication' %}" method="POST">{% csrf_token %}
+        <button type="submit" name="action" value="inscription">Inscription</button>
+        <button type="submit" name="action" value="login">Login</button>
+        <button type="submit" name="action" value="logout">Logout</button>
+    </form>
+    {{ coucou_test }}
+</main>
+{% endblock %}

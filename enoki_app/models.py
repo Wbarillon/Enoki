@@ -58,7 +58,7 @@ class Question(models.Model):
 class AnswerChoice(models.Model):
 
     id = models.AutoField(primary_key = True)
-    id_quiz = models.ForeignKey('Quiz', on_delete = models.CASCADE, verbose_name = 'Questionnaire', null = False, blank = False)
+    #id_quiz = models.ForeignKey('Quiz', on_delete = models.CASCADE, verbose_name = 'Questionnaire', null = False, blank = False)
     id_question = models.ForeignKey('Question', on_delete = models.CASCADE, verbose_name = 'Question', null = False, blank = False)
     answer_choice = models.CharField(verbose_name = 'Choix de réponses', max_length = 150, null = True, blank = True)
     correct_answer = models.BooleanField(verbose_name = 'Bonne réponse', null = True)
@@ -74,9 +74,10 @@ class AnswerUser(models.Model):
 
     id = models.AutoField(primary_key = True)
     id_user = models.ForeignKey('CustomUser', on_delete = models.PROTECT, verbose_name = 'Utilisateur', null = False, blank = False)
-    id_quiz = models.ForeignKey('Quiz', on_delete = models.CASCADE, verbose_name = 'Questionnaire', null = False, blank = False)
-    id_question = models.ForeignKey('Question', on_delete = models.CASCADE, verbose_name = 'Question', null = False, blank = False)
+    #id_quiz = models.ForeignKey('Quiz', on_delete = models.CASCADE, verbose_name = 'Questionnaire', null = False, blank = False)
+    #id_question = models.ForeignKey('Question', on_delete = models.CASCADE, verbose_name = 'Question', null = False, blank = False)
     id_answer_choice = models.ForeignKey('AnswerChoice', on_delete = models.CASCADE, verbose_name = 'Choix de réponse', null = False, blank = False)
+    answer_date = models.DateTimeField(verbose_name = 'Date de réponse', auto_now_add = True, null = False, blank = False)
 
     def __str__(self):
         return self.id_user + - + self.id_answer_choice

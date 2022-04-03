@@ -16,7 +16,7 @@ def get_quiz(id_quiz):
                     order by eaa.id
                 ) as answers_choice
             from enoki_app_question as eaq
-            where eaq.id_quiz_id = 1
+            where eaq.id_quiz_id = %(id_quiz)s
         ) as quiz
     '''
 

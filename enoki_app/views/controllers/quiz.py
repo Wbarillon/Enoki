@@ -1,18 +1,12 @@
 from enoki_app.views.services.quiz import (
-    get_quiz_from_db
-)
-from enoki_app.forms import (
-    QuizForm
+    get_quiz_from_db,
+    save_quiz_answers
 )
 
 def quiz_controller(request, context, id_quiz):
 
-    quiz = get_quiz_from_db(id_quiz)
+    context, quiz = get_quiz_from_db(context, id_quiz)
 
-    print(request.POST)
+    if request.method == 'POST':
 
-    form = QuizForm(quiz = quiz)
-
-    context.update({
-        'form': form
-    })
+        save_quiz_answers(request, quiz)

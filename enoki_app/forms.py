@@ -3,6 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 
 from enoki_app.models import (
     AnswerChoice,
+    AnswerUser,
     CustomUser,
     Question
 )
@@ -35,3 +36,9 @@ class QuizForm(forms.Form):
                     choices = [list(stuff.items())[0] for stuff in quiz[i]['answers_choice']]
                 )
             )
+
+class AnswerUserModelForm(forms.ModelForm):
+
+    class Meta:
+        model = AnswerUser
+        fields = ['id_user', 'id_answer_choice']

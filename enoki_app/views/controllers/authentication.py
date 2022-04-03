@@ -38,7 +38,7 @@ def authentication_controller(request, context):
 
                 if user_inscription(request, inscription_form):
 
-                    return 'etat_jardin'
+                    return 'quiz_list'
 
                 else:
 
@@ -61,7 +61,7 @@ def authentication_controller(request, context):
 
                 if user_login(request, login_form):
 
-                    return 'etat_jardin'
+                    return 'quiz_list'
 
                 else:
 

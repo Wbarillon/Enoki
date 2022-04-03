@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main id="home-main">
+    {% for quiz in quizzes %}
+        <a href="{% url 'quiz' id_quiz=quiz.id %}">{{ quiz.subject }}</a>
+    {% endfor %}
+</main>
+{% endblock %}

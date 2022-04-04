@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'enoki_app.apps.EnokiAppConfig'
+    'enoki_app.apps.EnokiAppConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

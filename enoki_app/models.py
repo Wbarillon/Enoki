@@ -45,7 +45,7 @@ class Quiz(models.Model):
 class Question(models.Model):
 
     id = models.AutoField(primary_key = True)
-    id_quiz = models.ForeignKey('Quiz', on_delete = models.CASCADE, verbose_name = 'Questionnaire', null = False, blank = False)
+    id_quiz = models.ForeignKey('Quiz', on_delete = models.CASCADE, verbose_name = 'Questionnaire', related_name = 'questions', null = False, blank = False)
     question = models.CharField(verbose_name = 'Question', max_length = 150, null = True, blank = True)
 
     def __str__(self):
@@ -59,7 +59,7 @@ class AnswerChoice(models.Model):
 
     id = models.AutoField(primary_key = True)
     #id_quiz = models.ForeignKey('Quiz', on_delete = models.CASCADE, verbose_name = 'Questionnaire', null = False, blank = False)
-    id_question = models.ForeignKey('Question', on_delete = models.CASCADE, verbose_name = 'Question', null = False, blank = False)
+    id_question = models.ForeignKey('Question', on_delete = models.CASCADE, verbose_name = 'Question', related_name = 'answers_choice', null = False, blank = False)
     answer_choice = models.CharField(verbose_name = 'Choix de réponses', max_length = 150, null = True, blank = True)
     correct_answer = models.BooleanField(verbose_name = 'Bonne réponse', null = True)
 

@@ -1,8 +1,7 @@
 # Enoki
 Test technique pour Enoki studio
 
-## Installation du projet
-Initialisation de la base de données
+## Initialisation de la base de données
 
 > docker compose up -d db_postgresql
 

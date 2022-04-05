@@ -20,6 +20,8 @@ Lors d'un - éventuel - rallumage des conteneurs, il n'est pas recommandé d'uti
 
 > docker compose run django python manage.py create_user
 
+## Accéder à l'API
+
 L'api est accessible depuis localhost:8000/api
 
 ## Connexion à la partie admin

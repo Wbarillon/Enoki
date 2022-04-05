@@ -9,6 +9,10 @@ Test technique pour Enoki studio
 
 > docker compose up -d django
 
+## Lancement des conteneurs une fois installée
+
+Lors d'un - éventuel - rallumage des conteneurs, il n'est pas recommandé d'utiliser docker compose up. Le fichier start.sh permet d'allumer les conteneurs.
+
 ## Création des utilisateurs
 
 > docker compose run django python manage.py create_user

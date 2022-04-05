@@ -1,6 +1,9 @@
 # Enoki
 Test technique pour Enoki studio
 
+## Ne pas oublier d'ajouter le fichier .env et le fichier users.csv
+Ce dernier est à intégrer dans . /media/csv. Le "." représente la racine du projet.
+
 ## Initialisation de la base de données
 
 > docker compose up -d db_postgresql
